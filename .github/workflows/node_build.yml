@@ -29,4 +29,5 @@ jobs:
           node-version: '20.x'
       - run: npm i npm@latest -g 
       - run: npm i
+      - run: npm install --save-dev mocha
       - run: npm test
