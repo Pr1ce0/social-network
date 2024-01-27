@@ -29,4 +29,4 @@ jobs:
     
       - name: Deploy to Azure VM
         run: |
-          rsync -r --delete-after $GITHUB_WORKSPACE/* azureuser@51.120.5.113:$HOME
+          rsync -r --delete-after $GITHUB_WORKSPACE/* azureuser@51.120.5.113:/var/www
