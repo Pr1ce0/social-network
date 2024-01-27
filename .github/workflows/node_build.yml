@@ -15,3 +15,18 @@ jobs:
           node-version: '20.x'
       - run: npm ci
       - run: npm run build --if-present
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+    
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.2
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    
+      - name: Deploy to Azure VM
+        run: |
+          rsync -r --delete-after $GITHUB_WORKSPACE/* azureuser@51.120.5.113:$HOME
