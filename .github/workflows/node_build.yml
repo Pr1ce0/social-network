@@ -31,4 +31,4 @@ jobs:
       - name: Deploy to Azure VM
         run: |
           scp -o StrictHostKeyChecking=no -r $GITHUB_WORKSPACE/* azureuser@51.120.5.113:/var/www
-
+#
