@@ -1,0 +1,1 @@
+Mind database.js, it requires mongodb insteaed of localhost in order for app to make connection on dockerized mongodb
